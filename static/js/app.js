@@ -34,7 +34,7 @@ $(function () {
     self.addFromForm = function (form) {
       var input = $(form).find("input[name=text]");
       if(input.val()){
-        self.add(input.val());
+        self.addItem(input.val());
         input.val("");
       }
     };
