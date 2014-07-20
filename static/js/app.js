@@ -16,18 +16,10 @@ $(function () {
       new TodoItem({text: "item2"})
     ]);
 
-    self.add = function (text) {
+    self.addItem = function (text) {
       self.list.push(
         new TodoItem({text: text})
       );
-    };
-
-    self.addFromForm = function (form) {
-      var input = $(form).find("input[name=text]");
-      if(input.val()){
-        self.add(input.val());
-        input.val("");
-      }
     };
 
     self.removeItem = function (text) {
@@ -39,6 +31,14 @@ $(function () {
       self.list(list);
     };
 
+    self.addFromForm = function (form) {
+      var input = $(form).find("input[name=text]");
+      if(input.val()){
+        self.add(input.val());
+        input.val("");
+      }
+    };
+
     self.removeChecked = function () {
       $.each(self.list(),function () {
         if(this.complete()){
@@ -46,12 +46,6 @@ $(function () {
         }
       }); 
     };
-
-    //self.checkedClass = ko.computed(function () {
-    //  return self.complete ? "list-group-item-imfo" : "";
-    //}, this);
-
-    
   };
 
   ko.applyBindings(new TodoList());
