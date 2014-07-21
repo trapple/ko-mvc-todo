@@ -22,16 +22,16 @@
   <div class="col-md-4">
     <h1>TODO APP</h1>
     <p>input your task</p>
-    <form class="form-inline todo-form" data-bind="submit: addFromForm">
+    <form class="form-inline todo-form" data-bind="submit: addItem">
       <input class="form-control" name="text" type="text">
       <input type="submit" class="btn" value="送信">
     </form>
 
     <h3>USUAL TASKS</h3>
     <ul class="usual-list list-group">
-      <li class="list-group-item" data-bind="click: function(){addItem('読書')}">読書</li>
-      <li class="list-group-item" data-bind="click: function(){addItem('運動')}">運動</li>
-      <li class="list-group-item" data-bind="click: function(){addItem('睡眠')}">睡眠</li>
+      <li class="list-group-item" data-bind="click: function(){add('読書')}">読書</li>
+      <li class="list-group-item" data-bind="click: function(){add('運動')}">運動</li>
+      <li class="list-group-item" data-bind="click: function(){add('睡眠')}">睡眠</li>
     </ul>
   </div>
   <div class="col-md-4">
@@ -43,7 +43,7 @@
     </p>
     <ul class="todo-list list-group" data-bind="foreach: list">
       <li class="list-group-item" data-bind="css: {'list-group-item-info': complete}, click: toggleComplete">
-      <input type="checkbox" data-bind="value: text, checked: complete"> <span data-bind="text: text"></span></li>
+      <input type="checkbox" data-bind="checked: complete, click: function(){return true}, clickBubble: false"> <span data-bind="text: text"></span></li>
     </ul>
   </div>
   <div class="col-md-4">

@@ -16,7 +16,7 @@ $(function () {
       new TodoItem({text: "item2"})
     ]);
 
-    self.addItem = function (text) {
+    self.add = function (text) {
       self.list.push(
         new TodoItem({text: text})
       );
@@ -31,10 +31,10 @@ $(function () {
       self.list(list);
     };
 
-    self.addFromForm = function (form) {
+    self.addItem = function (form) {
       var input = $(form).find("input[name=text]");
       if(input.val()){
-        self.addItem(input.val());
+        self.add(input.val());
         input.val("");
       }
     };
