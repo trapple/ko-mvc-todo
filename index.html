@@ -46,10 +46,12 @@
       <input type="checkbox" data-bind="checked: complete, click: function(){return true}, clickBubble: false"> <span data-bind="text: text"></span></li>
     </ul>
   </div>
+  <!--[if (gt IE 7)|!(IE)]><!-->
   <div class="col-md-4">
     <h2>DEBUG</h2>
     <pre data-bind="text: ko.toJSON($data, null, 2)"></pre>
   </div>
+  <!--<![endif]-->
 </div>
 
 
